@@ -8,11 +8,11 @@
 
     <main>
         <% if (errorMessage) { %>
-        <div class="user-message user-message--error">
-            <%= errorMessage %>
-        </div>
-        <% } %>
-        <form class="login-form" action="/login" method="POST">
+            <div class="user-message user-message--error">
+                <%= errorMessage %>
+            </div>
+            <% } %>
+        <form class="login-form" action="/signup" method="POST">
             <div class="form-control">
                 <label for="email">E-Mail</label>
                 <input type="email" name="email" id="email" >
@@ -21,10 +21,14 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" >
             </div>
+            <div class="form-control">
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="password" name="confirmpassword" id="confirmpassword" >
+            </div>
 
             <div class="login-signup">
                 <a href="/"><button class="btn" type="button">Cancel</button></a>
-                <button class="btn" type="submit">Login</button>  
+                <button class="btn" type="submit">Signup</button>  
             </div>
             <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
         </form>
